@@ -100,7 +100,7 @@ function M.setup()
     use {
       "numToStr/Comment.nvim",
       opt = true,
-      keys = { "gc", "gcc", "gbc" },
+      keys = {"Ctrl-/", "gcc", "gbc" },
       config = function()
         require("Comment").setup {}
       end,
@@ -161,8 +161,65 @@ function M.setup()
 		}
 
 		use { "junegunn/fzf", run = "./install --all" }
-		
-			if packer_bootstrap then
+
+		-- Coq
+		use {
+			"ms-jpq/coq_nvim",
+			branch = "coq",
+			event = "InsertEnter",
+			opt = true,
+			run = ":COQdeps",
+			config = function()
+				require("config.coq").setup()
+			end,
+			requires = {
+				{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+				{ "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
+			},
+			disable = false,
+		}	
+
+		-- Auto pairs
+		use {
+			"windwp/nvim-autopairs",
+			wants = "nvim-treesitter",
+			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			config = function()
+				require("config.autopairs").setup()
+			end,
+		}
+		-- use {
+		-- 	"hrsh7th/nvim-cmp",
+		-- 	event = "InsertEnter",
+		-- 	opt = true,
+		-- 	config = function()
+		-- 		require("config.cmp").setup()
+		-- 	end,
+		-- 	wants = { "LuaSnip" },
+		-- 	requires = {
+		-- 		"hrsh7th/cmp-buffer",
+		-- 		"hrsh7th/cmp-path",
+		-- 		"hrsh7th/cmp-nvim-lua",
+		-- 		"ray-x/cmp-treesitter",
+		-- 		"hrsh7th/cmp-cmdline",
+		-- 		"saadparwaiz1/cmp_luasnip",
+		-- 		"hrsh7th/cmp-calc",
+		-- 		"f3fora/cmp-spell",
+		-- 		"hrsh7th/cmp-emoji",
+		-- 		{
+		-- 			"L3MON4D3/LuaSnip",
+		-- 			wants = "friendly-snippets",
+		-- 			config = function()
+		-- 				require("config.luasnip").setup()
+		-- 			end,
+		-- 		},
+		-- 		"rafamadriz/friendly-snippets",
+		-- 		disable = false,
+		-- 	},
+		-- }
+		--
+	
+		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
 			require("packer").sync()
 		end
