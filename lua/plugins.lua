@@ -59,19 +59,9 @@ function M.setup()
 		-- WhichKey
 		use {
 			"folke/which-key.nvim",
-			event = "VimEnter",
 			config = function()
-				require("which-key").setup {
-
-					triggers = "^", -- this trigger will prevent "d" and "g" to be triggers, use :WhichKey  
-					-- old which key config
-					-- use {
-					-- "folke/which-key.nvim",
-					-- 	config = function()
-					-- 	require("config.whichkey").setup()
-					-- 	end,
-				}
-			end
+				require("config.whichkey").setup()
+			end,
 		}
 
 		-- Neogit
@@ -134,6 +124,7 @@ function M.setup()
 			cmd = { "MarkdownPreview" },
 		}
 
+		-- LuaLine
 		use {
 			"nvim-lualine/lualine.nvim",
 			event = "VimEnter",
@@ -143,6 +134,7 @@ function M.setup()
 			requires = { "nvim-web-devicons" },
 		}
 
+		-- nvim-gps
 		use {
 			"SmiteshP/nvim-gps",
 			requires = "nvim-treesitter/nvim-treesitter",
@@ -152,6 +144,7 @@ function M.setup()
 			end,
 		}
 
+		-- treesitter
 		use {
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
@@ -160,9 +153,38 @@ function M.setup()
 			end,
 		}
 
+		-- nvim-tree
+		use {
+			"kyazdani42/nvim-tree.lua",
+			requires = {
+				"kyazdani42/nvim-web-devicons",
+			},
+			cmd = { "NvimTreeToggle", "NvimTreeClose" },
+			config = function()
+				require("config.nvimtree").setup()
+			end,
+		}
+
+
 		use { "junegunn/fzf", run = "./install --all" }
 
-		-- Coq
+		-- LSP
+		use {
+			"neovim/nvim-lspconfig",
+			opt = true,
+			event = "BufReadPre",
+			wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
+			config = function()
+				require("config.lsp").setup()
+			end,
+			requires = {
+				"williamboman/nvim-lsp-installer",
+				"ray-x/lsp_signature.nvim",
+			},
+		}
+
+
+		-- coq 
 		use {
 			"ms-jpq/coq_nvim",
 			branch = "coq",
@@ -177,48 +199,19 @@ function M.setup()
 				{ "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
 			},
 			disable = false,
-		}	
+		}
 
-		-- Auto pairs
+		-- Rust
 		use {
-			"windwp/nvim-autopairs",
-			wants = "nvim-treesitter",
-			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			"simrat39/rust-tools.nvim",
+			requires = { "nvim-lua/plenary.nvim", "rust-lang/rust.vim" },
+			module = "rust-tools",
+			ft = { "rust" },
 			config = function()
-				require("config.autopairs").setup()
+				require("rust-tools").setup {}
 			end,
 		}
-		-- use {
-		-- 	"hrsh7th/nvim-cmp",
-		-- 	event = "InsertEnter",
-		-- 	opt = true,
-		-- 	config = function()
-		-- 		require("config.cmp").setup()
-		-- 	end,
-		-- 	wants = { "LuaSnip" },
-		-- 	requires = {
-		-- 		"hrsh7th/cmp-buffer",
-		-- 		"hrsh7th/cmp-path",
-		-- 		"hrsh7th/cmp-nvim-lua",
-		-- 		"ray-x/cmp-treesitter",
-		-- 		"hrsh7th/cmp-cmdline",
-		-- 		"saadparwaiz1/cmp_luasnip",
-		-- 		"hrsh7th/cmp-calc",
-		-- 		"f3fora/cmp-spell",
-		-- 		"hrsh7th/cmp-emoji",
-		-- 		{
-		-- 			"L3MON4D3/LuaSnip",
-		-- 			wants = "friendly-snippets",
-		-- 			config = function()
-		-- 				require("config.luasnip").setup()
-		-- 			end,
-		-- 		},
-		-- 		"rafamadriz/friendly-snippets",
-		-- 		disable = false,
-		-- 	},
-		-- }
-		--
-	
+
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
 			require("packer").sync()

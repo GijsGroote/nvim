@@ -20,12 +20,14 @@ opt.updatetime = 250 --Decrease update time
 opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 -- Time in milliseconds to wait for a mapped sequence to complete.
--- opt.timeoutlen = 400
+opt.timeoutlen = 1000
 opt.path:remove "/usr/include"
 opt.path:append "**"
 -- vim.cmd [[set path=.,,,$PWD/**]] -- Alternatively set the path
 opt.wildignorecase = true
 
+-- open nvim-tree on space-e
+vim.cmd('nnoremap <space>e :NvimTreeToggle<CR>')
 
 -- Highlight on yank
 vim.cmd [[
@@ -34,3 +36,4 @@ vim.cmd [[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]]
+
