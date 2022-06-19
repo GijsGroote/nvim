@@ -1,3 +1,8 @@
+local lsp_installer_servers = require "nvim-lsp-installer.servers"
+local utils = require "utils"
+
+local M = {}
+
 function M.setup(servers, options)
   for server_name, _ in pairs(servers) do
     local server_available, server = lsp_installer_servers.get_server(server_name)
@@ -24,11 +29,10 @@ function M.setup(servers, options)
         else
           server:setup(opts)
         end
-        utils.info(server.name, " is ready.")
       end)
 
       if not server:is_installed() then
-        utils.info("Installing " .. server.name)
+        utils.info("Installing " .. server.name, "LSP")
         server:install()
       end
     else
@@ -36,3 +40,5 @@ function M.setup(servers, options)
     end
   end
 end
+
+return M
