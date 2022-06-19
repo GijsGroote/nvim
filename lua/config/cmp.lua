@@ -36,7 +36,7 @@ function M.setup()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
   end
 
-  local luasnip = require "luasnip"
+  --local luasnip = require "luasnip"
   local cmp = require "cmp"
 
   cmp.setup {
@@ -123,11 +123,12 @@ function M.setup()
       -- { name = "calc" },
     },
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
-    },
+      window = {
+        documentation = cmp.config.window.bordered(),
+      },
+    }
   }
-
+  
   -- Use buffer source for `/`
   cmp.setup.cmdline("/", {
     sources = {

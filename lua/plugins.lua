@@ -393,21 +393,22 @@ function M.setup()
     }
 
     -- Completion
-    use {
-      "ms-jpq/coq_nvim",
-      branch = "coq",
-      event = "VimEnter",
-      opt = true,
-      run = ":COQdeps",
-      config = function()
-        require("config.coq").setup()
-      end,
-      requires = {
-        { "ms-jpq/coq.artifacts", branch = "artifacts" },
-        { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
-      },
-      disable = not PLUGINS.coq.enabled,
-    }
+    -- use {
+    --   "ms-jpq/coq_nvim",
+    --   branch = "coq",
+    --   event = "VimEnter",
+    --   opt = true,
+    --   run = ":COQdeps",
+    --   config = function()
+    --     require("config.coq").setup()
+    --   end,
+    --   requires = {
+    --     { "ms-jpq/coq.artifacts", branch = "artifacts" },
+    --     { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
+    --   },
+    --   disable = not PLUGINS.coq.enabled,
+    -- }
+    --
 
     use {
       "hrsh7th/nvim-cmp",
@@ -425,20 +426,20 @@ function M.setup()
         "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-nvim-lsp-signature-help",
+        -- "hrsh7th/cmp-nvim-lsp-signature-help",
         -- "onsails/lspkind-nvim",
         -- "hrsh7th/cmp-calc",
         -- "f3fora/cmp-spell",
         -- "hrsh7th/cmp-emoji",
         {
           "L3MON4D3/LuaSnip",
-          wants = { "friendly-snippets", "vim-snippets" },
+          wants = { "friendly-snippets" }, --, "vim-snippets" },
           config = function()
             require("config.snip").setup()
           end,
         },
         "rafamadriz/friendly-snippets",
-        "honza/vim-snippets",
+       -- "honza/vim-snippets",
       },
       disable = not PLUGINS.nvim_cmp.enabled,
     }
