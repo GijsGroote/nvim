@@ -35,7 +35,7 @@ local function keymappings(client, bufnr)
       h = { "<cmd>lua vim.diagnostic.hide()<CR>", "Hide Diagnostics" },
     },
   }
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     keymap_l.l.F = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
   end
 
