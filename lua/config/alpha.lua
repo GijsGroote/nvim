@@ -9,7 +9,7 @@ function M.setup()
   local dashboard = require "alpha.themes.dashboard"
   local function header()
     return {
-[[               \ : /]],
+[[                     \ : /]],
 [[                   '-: __ :-']],
 [[                    -:  )(_ :--]],
 [[                   -' |r-_i'-]],
