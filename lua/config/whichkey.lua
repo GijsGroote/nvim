@@ -34,12 +34,11 @@ local function normal_keymap()
 
   local f = {
 	  name = "Find",
-	  f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-	  b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
-	  o = { "<cmd>FzfLua oldfiles<cr>", "Old Files" },
-	  g = { "<cmd>FzfLua live_grep<cr>", "Live Grep" },
-	  c = { "<cmd>FzfLua commands<cr>", "Commands" },
-     
+    f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
+    b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
+    o = { "<cmd>FzfLua oldfiles<cr>", "Old Files" },
+    g = { "<cmd>FzfLua live_grep<cr>", "Live Grep" },
+    c = { "<cmd>FzfLua commands<cr>", "Commands" },
   }
 
   local keymap = {

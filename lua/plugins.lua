@@ -76,7 +76,8 @@ function M.setup()
 			config = function()
 				require("colorizer").setup()
 			end,
-		}                                                                                                                                                                                                                                                                                                                                                                         
+		}
+
 		-- Startup screen
 		use {
 			"goolord/alpha-nvim",
@@ -133,14 +134,15 @@ function M.setup()
 			requires = { "kyazdani42/nvim-web-devicons" },
 		}
 
-		use {
-			"sitiom/nvim-numbertoggle",
-			config = function()
-				require("numbertoggle").setup()
-			end
-		}
+    -- number toggle for hybird numbering
+    use {
+      "sitiom/nvim-numbertoggle",
+      config = function()
+        require("numbertoggle").setup()
+      end
+    }
 
-  -- LSP
+    -- LSP
   use {
     "neovim/nvim-lspconfig",
     opt = true,
