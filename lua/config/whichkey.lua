@@ -30,41 +30,17 @@ local v_opts = {
 }
 
 local function normal_keymap()
-  local keymap_f = nil -- File search
   local keymap_p = nil -- Project search
 
-  -- if PLUGINS.telescope.enabled then
-  --   keymap_f = {
-  --     name = "Find",
-  --     f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-  --     d = { "<cmd>lua require('utils.finder').find_dotfiles()<cr>", "Dotfiles" },
-  --     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-  --     h = { "<cmd>Telescope help_tags<cr>", "Help" },
-  --     o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
-  --     g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-  --     c = { "<cmd>Telescope commands<cr>", "Commands" },
-  --     r = { "<cmd>Telescope file_browser<cr>", "Browser" },
-  --     w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
-  --     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  --   }
-  -- 
-  --     name = "Project",
-  --     p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
-  --     s = { "<cmd>Telescope repo list<cr>", "Search" },
-  --   }
-  -- end
-
-  -- if PLUGINS.fzf_lua.enabled then
-  --   keymap_f = {
-  --     name = "Find",
-  --     f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-  --     b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
-  --     o = { "<cmd>FzfLua oldfiles<cr>", "Old Files" },
-  --     g = { "<cmd>FzfLua live_grep<cr>", "Live Grep" },
-  --     c = { "<cmd>FzfLua commands<cr>", "Commands" },
-  --     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  --   }
-  -- end
+  local f = {
+	  name = "Find",
+	  f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
+	  b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
+	  o = { "<cmd>FzfLua oldfiles<cr>", "Old Files" },
+	  g = { "<cmd>FzfLua live_grep<cr>", "Live Grep" },
+	  c = { "<cmd>FzfLua commands<cr>", "Commands" },
+     
+  }
 
   local keymap = {
     ["w"] = { "<cmd>update!<CR>", "Save" },
@@ -92,7 +68,6 @@ local function normal_keymap()
       name = "Debug",
     },
 
-    f = keymap_f,
     p = keymap_p,
 
     j = {
@@ -101,13 +76,13 @@ local function normal_keymap()
       m = { "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<Cr>", "UI Menu" },
       c = { "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<Cr>", "Command Menu" },
     },
-    ["1"] = { "<Cmd>lua require('harpoon.ui').nav_file(1) <Cr>", "File 1" },
-    ["2"] = { "<Cmd>lua require('harpoon.ui').nav_file(2) <Cr>", "File 2" },
-    ["3"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(1)<Cr>", "Terminal 1" },
-    ["4"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(2)<Cr>", "Terminal 2" },
-    ["5"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,1)<Cr>", "Command 1" },
-    ["6"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,2)<Cr>", "Command 2" },
-
+    -- ["1"] = { "<Cmd>lua require('harpoon.ui').nav_file(1) <Cr>", "File 1" },
+    -- ["2"] = { "<Cmd>lua require('harpoon.ui').nav_file(2) <Cr>", "File 2" },
+    -- ["3"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(1)<Cr>", "Terminal 1" },
+    -- ["4"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(2)<Cr>", "Terminal 2" },
+    -- ["5"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,1)<Cr>", "Command 1" },
+    -- ["6"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,2)<Cr>", "Command 2" },
+    --
     t = {
       name = "Test",
       S = { "<cmd>UltestSummary<cr>", "Summary" },

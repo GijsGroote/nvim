@@ -124,8 +124,37 @@ function M.setup()
 				require("config.whichkey").setup()
 			end,
 		}
-	end
 
+		-- fuzzy file search 
+		use { "junegunn/fzf", run = "./install --all" }
+		use { "junegunn/fzf.vim" }
+		use {
+			"ibhagwan/fzf-lua",
+			requires = { "kyazdani42/nvim-web-devicons" },
+		}
+
+		use {
+			"sitiom/nvim-numbertoggle",
+			config = function()
+				require("numbertoggle").setup()
+			end
+		}
+
+  -- LSP
+  use {
+    "neovim/nvim-lspconfig",
+    opt = true,
+    event = "BufReadPre",
+    wants = { "nvim-lsp-installer" },
+    config = function()
+      require("config.lsp").setup()
+    end,
+    requires = {
+      "williamboman/nvim-lsp-installer",
+    },
+  }
+  
+  end
 	packer_init()
 	local packer = require "packer"
 
