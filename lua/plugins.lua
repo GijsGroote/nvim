@@ -39,7 +39,6 @@ function M.setup()
 	local function plugins(use)
 		use { "wbthomason/packer.nvim" }
 
-
 		-- Colorscheme
 		use {
 			"folke/tokyonight.nvim",
@@ -133,14 +132,6 @@ function M.setup()
 			"ibhagwan/fzf-lua",
 			requires = { "kyazdani42/nvim-web-devicons" },
 		}
-
-    -- number toggle for hybird numbering
-    use {
-      "sitiom/nvim-numbertoggle",
-      config = function()
-        require("numbertoggle").setup()
-      end
-    }
 
     -- LSP
   use {

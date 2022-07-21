@@ -16,7 +16,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 
--- opt.number = true
+opt.number = true
 
 -- set current directory for fuzzy search
 opt.path:remove "/usr/include"

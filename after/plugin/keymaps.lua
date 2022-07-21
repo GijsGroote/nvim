@@ -7,7 +7,7 @@ local default_opts = { noremap = true, silent = true }
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", default_opts)
 
 -- Cancel search highlighting with ESC
--- keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_opts)
+keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_opts)
 
 -- fuzzy finder
 keymap("n", "<leader>f", ":Files<CR>", default_opts)
