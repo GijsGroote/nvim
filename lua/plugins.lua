@@ -91,11 +91,18 @@ function M.setup()
 			opt = true,
 			keys = { "gcc", "gbc" },
 			config = function()
-				require("Comment").setup {}
-			end,
-		}
+        require("Comment").setup {}
+      end,
+    }
 
-		-- IndentLine
+    -- -- Formatter
+    --require("packer").startup(
+    --function()
+    --  use "lukas-reineke/lsp-format.nvim"
+    --end
+    --)
+
+    -- IndentLine
 		use {
 			"lukas-reineke/indent-blankline.nvim",
 			event = "BufReadPre",

@@ -11,8 +11,12 @@ local servers = {
   vimls = {},
 }
 
+
 local function on_attach(client, bufnr)
-  -- Enable completion triggered by <C-X><C-O>
+  -- use formatter
+  -- require "lsp-format".on_attach(client)
+  -- require "lspconfig".gopls.setup { on_attach = on_attach }
+
   -- See `:help omnifunc` and `:help ins-completion` for more information.
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
