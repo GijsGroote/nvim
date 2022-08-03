@@ -12,3 +12,6 @@ keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_opts)
 -- fuzzy finder
 keymap("n", "<leader>f", ":Files<CR>", default_opts)
 
+-- quote/unquote word     My first real remap :) it still qould use come work though
+keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
+
