@@ -129,37 +129,42 @@ function M.setup()
 			event = "vimEnter",
 			config = function()
 				require("config.whichkey").setup()
-			end,
-		}
+      end,
+    }
 
-		-- fuzzy file search 
-		use { "junegunn/fzf", run = "./install --all" }
-		use { "junegunn/fzf.vim" }
-		use {
-			"ibhagwan/fzf-lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
-		}
+    -- fuzzy file search 
+    use { "junegunn/fzf", run = "./install --all" }
+    use { "junegunn/fzf.vim" }
+    use {
+      "ibhagwan/fzf-lua",
+      requires = { "kyazdani42/nvim-web-devicons" },
+    }
 
     -- LSP
-  use {
-    "neovim/nvim-lspconfig",
-    opt = true,
-    event = "BufReadPre",
-    wants = { "nvim-lsp-installer" },
-    config = function()
-      require("config.lsp").setup()
-    end,
-    requires = {
-      "williamboman/nvim-lsp-installer",
-    },
-  }
-  
-  end
-	packer_init()
-	local packer = require "packer"
+    use {
+      "neovim/nvim-lspconfig",
+      opt = true,
+      event = "BufReadPre",
+      wants = { "nvim-lsp-installer" },
+      config = function()
+        require("config.lsp").setup()
+      end,
+      requires = {
+        "williamboman/nvim-lsp-installer",
+      },
+    }
 
-	packer.init(conf)
-	packer.startup(plugins)
+    -- Harpoon
+    use {'nvim-lua/plenary.nvim'}
+    use {'ThePrimeagen/harpoon'}
+
+
+  end
+  packer_init()
+  local packer = require "packer"
+
+  packer.init(conf)
+  packer.startup(plugins)
 end
 
 
