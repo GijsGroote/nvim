@@ -19,7 +19,7 @@ keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
 keymap("n", "<leader>r", ":w<CR> :!python3 %<CR>", default_opts)
 
 -- harpoon to navigate between multiple scripts 
-keymap("n", "<leader>h", ':lua require("harpoon.mark").add_file()<CR>', default_opts)
+keymap("n", "<leader>h", ':lua require("harpoon.mark").add_file()<CR>:lua print("file harpooned!")<CR>' , default_opts)
 keymap("n", "<leader>H", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', default_opts)
 keymap("n", "<leader>n", ':lua require("harpoon.ui").nav_next()<CR>', default_opts)
 keymap("n", "<leader>p", ':lua require("harpoon.ui").nav_prev()<CR>', default_opts)
@@ -27,7 +27,6 @@ keymap("n", "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', default_o
 keymap("n", "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', default_opts)
 keymap("n", "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', default_opts)
 keymap("n", "<leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', default_opts)
-
 
 -- quit every window without saving
 keymap("n", "<leader>Q", ":qall<CR>", default_opts)

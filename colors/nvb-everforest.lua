@@ -18,3 +18,6 @@ require("config.colorscheme").setup {
   base0E = "#e67e80",
   base0F = "#d699b6",
 }
+
+
+ 
