@@ -22,5 +22,4 @@ opt.number = true
 opt.path:remove "/usr/include"
 opt.path:append "**"
 
-
 g.python3_host_prog = "/usr/local/bin/python3"

@@ -31,5 +31,20 @@ keymap("n", "<leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', default_o
 -- quit every window without saving
 keymap("n", "<leader>Q", ":qall<CR>", default_opts)
 
+-- highlight color difinition with that color
+keymap("n", "<leader>c", ':ColorHighlight<CR>', default_opts)
+-- TODO: turn of color highlighting if they are turned on
+
+-- Turn camelCase into snake_case
+keymap("n", "<leader>sc", ':lua require("config.custom_keymaps").snake_case()<CR>', default_opts)
+
+
+
+
+
+
+
+
+
 
 

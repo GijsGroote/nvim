@@ -158,6 +158,11 @@ function M.setup()
     use {'nvim-lua/plenary.nvim'}
     use {'ThePrimeagen/harpoon'}
 
+    -- highlight color definitions
+    use {'chrisbra/Colorizer'}
+
+    -- Vim CSS color, highlight colors in files
+    -- use {'ap/vim-css-color'}
 
   end
   packer_init()
