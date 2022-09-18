@@ -36,15 +36,9 @@ keymap("n", "<leader>c", ':ColorHighlight<CR>', default_opts)
 -- TODO: turn of color highlighting if they are turned on
 
 -- Turn camelCase into snake_case
+-- TODO: fails on self._changeOfConfSet
 keymap("n", "<leader>sc", ':lua require("config.custom_keymaps").snake_case()<CR>', default_opts)
 
+-- newline without going into inseart mode
 
-
-
-
-
-
-
-
-
-
+keymap("n", "m", "o<C-c>", default_opts)

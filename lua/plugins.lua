@@ -45,7 +45,7 @@ function M.setup()
 			config = function()
 				vim.cmd "colorscheme tokyonight"
 			end,
-			disable = true,
+			disable = false,
 		}
 		use {
 			"sainnhe/everforest",
@@ -53,7 +53,7 @@ function M.setup()
 				vim.g.everforest_better_performance = 1
 				vim.cmd "colorscheme everforest"
 			end,
-			disable = false,
+			disable = true,
 		}
 		use {
 			"sainnhe/gruvbox-material",
@@ -112,15 +112,15 @@ function M.setup()
 		}
 
 		use {
-			'kyazdani42/nvim-tree.lua',
+			"kyazdani42/nvim-tree.lua",
 			requires = {
-				'kyazdani42/nvim-web-devicons', -- optional, for file icons
+				"kyazdani42/nvim-web-devicons", -- optional, for file icons
 			},
 			config = function()
 				require("config.nvimtree").setup()
 			end,
 
-			tag = 'nightly' -- optional, updated every week. (see issue #1193)
+			tag = "nightly" -- optional, updated every week. (see issue #1193)
 		}
 
 		-- Lua
@@ -155,14 +155,14 @@ function M.setup()
     }
 
     -- Harpoon
-    use {'nvim-lua/plenary.nvim'}
-    use {'ThePrimeagen/harpoon'}
+    use {"nvim-lua/plenary.nvim"}
+    use {"ThePrimeagen/harpoon"}
 
     -- highlight color definitions
-    use {'chrisbra/Colorizer'}
+    use {"chrisbra/Colorizer"}
 
-    -- Vim CSS color, highlight colors in files
-    -- use {'ap/vim-css-color'}
+    -- ALE (Asynchronous Lint Engine)
+    use {"dense-analysis/ale"}
 
   end
   packer_init()
