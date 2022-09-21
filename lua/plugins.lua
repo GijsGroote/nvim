@@ -56,13 +56,6 @@ function M.setup()
 			disable = true,
 		}
 		use {
-			"sainnhe/gruvbox-material",
-			config = function()
-				vim.cmd "colorscheme gruvbox-material"
-			end,
-			disable = true,
-		}
-		use {
 			"arcticicestudio/nord-vim",
 			config = function()
 				vim.cmd "colorscheme nord"
