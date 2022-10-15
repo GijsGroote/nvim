@@ -1,7 +1,7 @@
 local M = {}
 
 local servers = {
-  gopls = {},
+  -- gopls = {},
   html = {},
   jsonls = {},
   pyright = {},
