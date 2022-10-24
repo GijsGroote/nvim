@@ -39,5 +39,7 @@ keymap("n", "<leader>c", ':ColorHighlight<CR>', default_opts)
 keymap("n", "<leader>sc", ':lua require("config.custom_keymaps").snake_case()<CR>', default_opts)
 
 -- newline without going into inseart mode
-
 keymap("n", "m", "o<C-c>", default_opts)
+
+-- split current line to this line (left from cursor) and next line (right from cursor)
+keymap("n", "n", "i<CR><C-c>k$", default_opts)
