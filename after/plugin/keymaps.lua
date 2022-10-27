@@ -21,8 +21,8 @@ keymap("n", "<leader>r", ":w<CR> :!python3 %<CR>", default_opts)
 -- harpoon to navigate between multiple scripts 
 keymap("n", "<leader>h", ':lua require("harpoon.mark").add_file()<CR>:lua print("file harpooned!")<CR>' , default_opts)
 keymap("n", "<leader>H", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', default_opts)
-keymap("n", "<leader>n", ':lua require("harpoon.ui").nav_next()<CR>', default_opts)
-keymap("n", "<leader>p", ':lua require("harpoon.ui").nav_prev()<CR>', default_opts)
+--I AM NOT USING NEXT AND PREV FROM HARPOON keymap("n", "<leader>n", ':lua require("harpoon.ui").nav_next()<CR>', default_opts)
+-- keymap("n", "<leader>p", ':lua require("harpoon.ui").nav_prev()<CR>', default_opts)
 keymap("n", "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', default_opts)
 keymap("n", "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', default_opts)
 keymap("n", "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', default_opts)
@@ -42,4 +42,4 @@ keymap("n", "<leader>sc", ':lua require("config.custom_keymaps").snake_case()<CR
 keymap("n", "m", "o<C-c>", default_opts)
 
 -- split current line to this line (left from cursor) and next line (right from cursor)
-keymap("n", "n", "i<CR><C-c>k$", default_opts)
+keymap("n", "<leader>n", "i<CR><C-c>k$", default_opts)
