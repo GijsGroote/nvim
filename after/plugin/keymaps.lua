@@ -11,18 +11,15 @@ keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_opts)
 keymap("n", "<leader>f", ":Files<CR>", default_opts)
 
 -- quote/unquote word     My first real remap :) it still qould use come work though
--- TODO: UNFINISHED KEYMAP!!
-keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
+-- TODO: UNFINISHED KEYMAP, and also a incorrect one, gijs 11 nov 2022!!
+-- keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
 
 -- save and run current python script
--- TODO: update 
 keymap("n", "<leader>r", ":w<CR> :!python3 %<CR>", default_opts)
 
 -- harpoon to navigate between multiple scripts 
 keymap("n", "<leader>h", ':lua require("harpoon.mark").add_file()<CR>:lua print("file harpooned!")<CR>' , default_opts)
 keymap("n", "<leader>H", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', default_opts)
---I AM NOT USING NEXT AND PREV FROM HARPOON keymap("n", "<leader>n", ':lua require("harpoon.ui").nav_next()<CR>', default_opts)
--- keymap("n", "<leader>p", ':lua require("harpoon.ui").nav_prev()<CR>', default_opts)
 keymap("n", "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', default_opts)
 keymap("n", "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', default_opts)
 keymap("n", "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', default_opts)
@@ -43,3 +40,6 @@ keymap("n", "m", "o<C-c>", default_opts)
 
 -- split current line to this line (left from cursor) and next line (right from cursor)
 keymap("n", "<leader>n", "i<CR><C-c>k$", default_opts)
+
+-- JSON formatter
+keymap("n", "<leader>j", ":%!jq .<CR>$", default_opts)
