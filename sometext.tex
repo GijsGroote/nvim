@@ -1,0 +1,146 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{float}
+
+% have an specific width for table values
+\usepackage{tabularx}
+% give the background some nice colors in tabels
+\usepackage[table]{xcolor}
+\usepackage{eso-pic,graphicx}
+% for background images and alignment of the entire page
+\usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm, left=2cm, right=2cm]{geometry}
+% links to external pages
+
+\usepackage[colorlinks=false,
+    allbordercolors=blue,
+    ]{hyperref}
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=blue}}  
+
+% indents at the last tables
+\usepackage{hanging}
+
+% symbols which show genealogic symbols
+\usepackage{genealogytree}
+
+% no caption numering
+\usepackage{caption}
+
+% for the use of single quote marks
+\usepackage{textcomp} 
+% center subsection titles in the middle
+\usepackage{titlesec}
+% adding pdf pages with the next lines on the next pages
+\usepackage{pdfpages}
+% unnumbered dot lists
+\usepackage{enumitem}
+% smilies and stuff
+\usepackage{marvosym}
+% to create the table
+\usepackage{booktabs}
+% center tabels columns
+\usepackage{array}
+% set rules for alignment in table columns
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+% new name for toc
+\renewcommand{\contentsname}{\centering\huge Inhoudsopgave}
+
+
+% font families
+\usepackage{anyfontsize}
+
+% set settings
+% change name of table of contents page
+\renewcommand{\contentsname}{\centering\huge Inhoudsopgave}
+% no numbering on sections or subsections
+\setcounter{secnumdepth}{0}
+% subsections centered
+\titleformat{\subsection}[block]{\Large\bfseries\filcenter}{}{1em}{}
+
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1}
+\definecolor{white}{rgb}{1.0, 1.0, 1.0}
+
+% set colors for alternating table rows
+\let\oldtabular\tabular
+\let\endoldtabular\endtabular
+\renewenvironment{tabular}{\rowcolors{2}{white}{aliceblue}\oldtabular}{\endoldtabular}
+
+
+\providecommand\phantomsection{}
+
+\begin{document}
+
+% \includepdf[pages={1}, width=220mm]{img/voorkant_low_qually.pdf}
+
+% \input{voorwoord}
+% \newpage
+
+% \newgeometry{top=3cm, bottom=2cm, outer=0cm, inner=0cm, left=7cm, right=7cm} 
+% \tableofcontents
+% \restoregeometry
+% \newpage
+% \raggedright
+
+% \input{extra/bart}
+
+% \input{sec_inzending/sec}
+
+% % % deze doet stom
+% \input{Anet_Stevens/annet}
+
+% \input{extra/rob_margot}
+
+% \input{Tessa_Versteegen/tessa}
+
+% \input{extra/lindy}
+
+% \input{Groote/jan_friso}
+
+% \input{Marjolijn_Versteegen/marjolijn}
+
+% \input{extra/marit}
+
+% \input{Groote/paula}
+
+% \begin{figure}[b]
+%     \centering
+%     \includegraphics[width=\textwidth]{img/annapicca.jpg}
+%     \captionsetup{labelformat=empty}
+%     \caption{\Huge Neven \& nichten  middag, 12 september 2021}
+% \end{figure}
+
+% % deze doet stom
+% \input{Joke_vd/joke}
+
+% \input{Jos_Versteegen/jos}
+
+% \input{Maria_hoeven/maria}
+
+% \input{Groote/rick_en_gijs}
+
+% \input{Peter_Versteegen/peter}
+
+% \input{Groote/judi}
+
+% % deze doet stom
+% \input{victorine/victorine}
+
+% \input{Groote/anna}
+
+% % deze doet stom, hyperlinks
+% \input{Theo_Versteegen/theo}
+
+% \input{gouden_gids}
+%
+% \t{kalender}
+
+tome actual text
+
+\end{document}
+

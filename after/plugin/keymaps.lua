@@ -14,9 +14,6 @@ keymap("n", "<leader>f", ":Files<CR>", default_opts)
 -- TODO: UNFINISHED KEYMAP, and also a incorrect one, gijs 11 nov 2022!!
 -- keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
 
--- save and run current python script
-keymap("n", "<leader>r", ":w<CR> :!python3 %<CR>", default_opts)
-
 -- harpoon to navigate between multiple scripts 
 keymap("n", "<leader>h", ':lua require("harpoon.mark").add_file()<CR>:lua print("file harpooned!")<CR>' , default_opts)
 keymap("n", "<leader>H", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', default_opts)
@@ -43,3 +40,15 @@ keymap("n", "<leader>n", "i<CR><C-c>k$", default_opts)
 
 -- JSON formatter
 keymap("n", "<leader>j", ":%!jq .<CR>$", default_opts)
+
+
+-- copy to system clipboard
+keymap("v", "<leader>y", '"+y', default_opts)
+
+keymap("v", "<leader>p", '"+p', default_opts)
+keymap("n", "<leader>p", '"+p', default_opts)
+
+keymap("v", "<leader>p", '"+P', default_opts)
+keymap("n", "<leader>p", '"+P', default_opts)
+
+

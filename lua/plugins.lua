@@ -116,7 +116,7 @@ function M.setup()
 			tag = "nightly" -- optional, updated every week. (see issue #1193)
 		}
 
-		-- Lua
+		-- Whichkey
 		use {
 			"folke/which-key.nvim",
 			event = "vimEnter",
@@ -157,6 +157,16 @@ function M.setup()
     -- ALE (Asynchronous Lint Engine)
     use {"dense-analysis/ale"}
 
+    -- LuaSnip
+    use {
+      "L3MON4D3/LuaSnip",
+      tag = "v<CurrentMajor>.*",
+      config = function()
+				require("config.luasnip").setup()
+      end,
+      }
+
+    use {'lervag/vimtex'}
   end
   packer_init()
   local packer = require "packer"
@@ -164,6 +174,5 @@ function M.setup()
   packer.init(conf)
   packer.startup(plugins)
 end
-
 
 return M

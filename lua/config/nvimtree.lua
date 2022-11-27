@@ -1,8 +1,8 @@
 local M = {}
- 
+
 function M.setup()
   require("nvim-tree").setup {
-    disable_netrw = false,                                                                                         
+    disable_netrw = false,
     hijack_netrw = true,
     view = {
       number = true,
@@ -14,10 +14,10 @@ function M.setup()
       update_cwd = true,
     },
   }
- 
+
   vim.g.nvim_tree_respect_buf_cwd = 1
 end
- 
+
 return M
 
 

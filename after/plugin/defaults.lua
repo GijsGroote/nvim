@@ -23,3 +23,10 @@ opt.path:remove "/usr/include"
 opt.path:append "**"
 
 g.python3_host_prog = "/usr/local/bin/python3"
+
+-- set default file for plaintext files to latex
+vim.cmd[[
+let g:tex_flavor = "plain"
+let g:tex_flavor = "context"
+let g:tex_flavor = "latex"
+]]
