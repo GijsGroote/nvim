@@ -31,6 +31,20 @@ return {
     }
   ),
 
+  -- create figure environment
+  s({trig="fig"},
+    {
+      t({"\\begin{figure}",
+        "    \\centering",
+        "    \\includegraphics{}",
+        -- "    \\caption{}",
+        -- "    \\label{}",
+        "\\end{figure}"
+      }),
+    }
+  ),
+
+
   -- Combining text and insert nodes to create basic LaTeX commands
   s({trig="tt", dscr="Expands 'tt' into '\texttt{}'"},
     {

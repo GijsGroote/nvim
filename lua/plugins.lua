@@ -167,6 +167,8 @@ function M.setup()
       }
 
     use {'lervag/vimtex'}
+
+    use {'tpope/vim-dispatch'}
   end
   packer_init()
   local packer = require "packer"
