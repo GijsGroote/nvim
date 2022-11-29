@@ -51,4 +51,10 @@ keymap("n", "<leader>p", '"+p', default_opts)
 keymap("v", "<leader>p", '"+P', default_opts)
 keymap("n", "<leader>p", '"+P', default_opts)
 
+-- turn on true zen mode
+vim.api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
+vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
 

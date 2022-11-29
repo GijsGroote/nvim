@@ -1,19 +1,10 @@
-
-" This code would go in compiler/tex.vim
-
-" First create a script-local variable `s:latexmk` to store the latexmk command
-" let s:latexmk = 'latexmk -pdf -output-directory=%:h %'
-
-" Then set `makeprg` to the value of `s:latexmk`
-" let &l:makeprg = expand(s:latexmk)
-
-
 "
-" " Set `makeprg` command values for both pdflatex and latexmk
-" let s:pdflatex = 'pdflatex -file-line-error -interaction=nonstopmode ' .
-"       \ '-halt-on-error -synctex=1 -output-directory=%:h %'
-" " (Using '\' just continues a Vimscript expression on a new line for better readability)
-" let s:latexmk = 'latexmk -pdf -output-directory=%:h %'
+" " make sure that file output exist in the working directory
+" let s:pdflatex= 'pdflatex -output-dir=output %'
+" let s:latexmk = 'latexmk -pdf -output-directory=output %'
+"
+" " Then set `makeprg` to the value of `s:latexmk`
+" let &l:makeprg = expand(s:latexmk)
 "
 " " Create a variable to store pdflatex/latexmk state
 " " Possible values: 1 for latexmk and 0 for pdflatex
@@ -36,4 +27,8 @@
 "   else
 "     let &l:makeprg = expand(s:pdflatex)
 "   endif
-
+" endfunction
+"
+" echo "111calling textSetmakepgr"
+" call s:TexSetMakePrg()  " set value of Vim's `makeprg` option
+"

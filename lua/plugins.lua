@@ -78,6 +78,9 @@ function M.setup()
 			end,
 		}
 
+    -- Vimtex for latex documents
+    use {'lervag/vimtex'}
+
 		-- Better Comment
 		use {
 			"numToStr/Comment.nvim",
@@ -87,13 +90,6 @@ function M.setup()
         require("Comment").setup {}
       end,
     }
-
-    -- -- Formatter
-    --require("packer").startup(
-    --function()
-    --  use "lukas-reineke/lsp-format.nvim"
-    --end
-    --)
 
     -- IndentLine
 		use {
@@ -160,15 +156,29 @@ function M.setup()
     -- LuaSnip
     use {
       "L3MON4D3/LuaSnip",
-      tag = "v<CurrentMajor>.*",
       config = function()
-				require("config.luasnip").setup()
+        require("config.luasnip").setup()
       end,
-      }
+    }
 
-    use {'lervag/vimtex'}
+    -- Zen mode
+    use({
+      "Pocco81/true-zen.nvim",
+      config = function()
+        require("true-zen").setup {
+          -- your config goes here
+          -- or just leave it empty :)
+        }
+      end,
+    }) 
 
-    use {'tpope/vim-dispatch'}
+    -- absolute and relative line numbering
+    use {
+      "sitiom/nvim-numbertoggle",
+      config = function()
+        require("numbertoggle").setup()
+      end
+    }
   end
   packer_init()
   local packer = require "packer"
