@@ -7,23 +7,8 @@ function M.setup()
   end
 
   local dashboard = require "alpha.themes.dashboard"
-  local function header()
-    return {
-[[                       .-'~~~-.]],
-[[                     .'o  oOOOo`.]],
-[[                     :~~~-.oOo   o`.]],
-[[                      `. \ ~-.  oOOo.]],
-[[                        `.; / ~.  OO:]],
-[[                        .'  ;-- `.o.']],
-[[                       ,'  ; ~~--'~]],
-[[                       ;  ;]],
-[[ _______\|/__________\\;_\\//___\|/________]],
-[[ ]],
-    }
-  end
 
-  dashboard.section.header.val = header()
-
+  dashboard.section.header.val = require("config.ancii.ancii").get_random_ancii_art()
   dashboard.section.buttons.val = {
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
@@ -34,7 +19,7 @@ function M.setup()
     -- Number of plugins
     local total_plugins = #vim.tbl_keys(packer_plugins)
     local datetime = os.date "%d-%m-%Y %H:%M:%S"
-    local plugins_text = 
+    local plugins_text =
       "   "
       .. total_plugins
       .. " plugins"
